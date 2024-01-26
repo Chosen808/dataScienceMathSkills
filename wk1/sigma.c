@@ -86,6 +86,18 @@ double variance (int arr[], int size, double mean, int index)
     return (double)sig / size;
 }
 
+int sigSix (int index, int sum, int power)
+{
+    int sig = 0;
+
+    for (int i = index; i < sum + 1; i++)
+    {
+        sig += pow (i, power);
+    }
+
+    return sig;
+}
+
 main ()
 {
     int i = 1;
@@ -110,6 +122,8 @@ main ()
     printf ("Mean = %f \n", mean (z, sum5));
     printf ("Variance z = %f \n", variance (z, sum5, mean (z,sum5), 0));
     printf ("Variance w = %f \n", variance (w, sum6, mean (w, sum6), 0));
+
+    printf ("Sum = %d \n", sigSix (1, 100, 4));
 
     return 0;
 }
